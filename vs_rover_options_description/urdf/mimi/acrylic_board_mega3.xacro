@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<robot name="my_robot_parts" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:property name="pillar_mass" value="0.5" />
+  <xacro:property name="pillar_com_x" value="0.0" />
+  <xacro:property name="pillar_com_y" value="0.0" />
+  <xacro:property name="pillar_com_z" value="0.2" />
+
+  <xacro:property name="pillar_x_offset_bottom" value="0.0" />
+  <xacro:property name="pillar_y_offset_bottom" value="-0.0265" /> <!--赤軸-->
+  <xacro:property name="pillar_z_offset_bottom" value="0.3" /> <!--緑軸-->
+
+  <xacro:property name="pillar_x_offset_top" value="0.0" />
+  <xacro:property name="pillar_y_offset_top" value="-0.0265" />
+  <xacro:property name="pillar_z_offset_top" value="0.5" />
+
+  <joint name="acrylic_board_bottom_joint" type="fixed"> 
+    <parent link="base_link" />
+    <child link="acrylic_board_bottom" />
+    <origin xyz="${pillar_x_offset_bottom} ${pillar_y_offset_bottom} ${pillar_z_offset_bottom}" rpy="-1.5708 0 -1.5708" />
+  </joint>
+
+  <link name="acrylic_board_bottom">
+    <inertial>
+      <origin xyz="${pillar_com_x} ${pillar_com_y} ${pillar_com_z}" rpy="0 0 0" />
+      <mass value="${pillar_mass}" />
+      <inertia ixx="0.001" iyy="0.001" izz="0.0001" ixy="0" iyz="0" ixz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vs_rover_options_description/meshes/mimi/acrylic_board.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vs_rover_options_description/meshes/mimi/acrylic_board.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="acrylic_board_top_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="acrylic_board_top" />
+    <origin xyz="${pillar_x_offset_top} ${pillar_y_offset_top} ${pillar_z_offset_top}" rpy="-1.5708 0 -1.5708" />
+  </joint>
+
+  <link name="acrylic_board_top">
+    <inertial>
+      <origin xyz="${pillar_com_x} ${pillar_com_y} ${pillar_com_z}" rpy="0 0 0" />
+      <mass value="${pillar_mass}" />
+      <inertia ixx="0.001" iyy="0.001" izz="0.0001" ixy="0" iyz="0" ixz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vs_rover_options_description/meshes/mimi/acrylic_board.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vs_rover_options_description/meshes/mimi/acrylic_board.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+</robot>

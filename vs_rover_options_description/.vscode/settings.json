@@ -1,0 +1,34 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/kit_happy_robot/happy_ws/install/tts_piper/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/stt_whisper/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/realsense_processing/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/person_feature_extraction/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/mic_sensor/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/debug/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/happy_interfaces/local/lib/python3.10/dist-packages",
+        "/home/kit_happy_robot/happy_ws/install/happy_environment/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/uros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages",
+        "/home/kit_happy_robot/external_ws/install/yolo/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/external_ws/install/yolo_msgs/local/lib/python3.10/dist-packages",
+        "/home/kit_happy_robot/external_ws/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/kit_happy_robot/happy_ws/install/tts_piper/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/stt_whisper/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/realsense_processing/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/person_feature_extraction/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/mic_sensor/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/debug/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/happy_ws/install/happy_interfaces/local/lib/python3.10/dist-packages",
+        "/home/kit_happy_robot/happy_ws/install/happy_environment/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/uros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages",
+        "/home/kit_happy_robot/external_ws/install/yolo/lib/python3.10/site-packages",
+        "/home/kit_happy_robot/external_ws/install/yolo_msgs/local/lib/python3.10/dist-packages",
+        "/home/kit_happy_robot/external_ws/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

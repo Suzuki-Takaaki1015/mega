@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot name="my_robot_parts" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:property name="pillar_x_offset" value="-0.125"/> <!--赤軸-->
+  <xacro:property name="pillar_y_offset" value="0.079" /> <!--青軸-->
+  <xacro:property name="pillar_z_offset" value="0.65" /> <!--緑軸-->
+  <xacro:property name="pillar_mass" value="0.25" />
+  <xacro:property name="pillar_com_x" value="0.0" />
+  <xacro:property name="pillar_com_y" value="0.0" />
+  <xacro:property name="pillar_com_z" value="0.2" />
+
+  <joint name="emergency_switch" type="fixed"> 
+    <parent link="base_link" />
+    <child link="emergency_switch" />
+    <origin xyz="${pillar_x_offset} ${pillar_y_offset} ${pillar_z_offset}" rpy="1.5708 0 0" />
+  </joint>
+
+  <link name="emergency_switch">
+    <inertial>
+      <origin xyz="${pillar_com_x} ${pillar_com_y} ${pillar_com_z}" rpy="0 0 0" />
+      <mass value="${pillar_mass}" />
+      <inertia ixx="0.001" iyy="0.001" izz="0.0001" ixy="0" iyz="0" ixz="0" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vs_rover_options_description/meshes/mimi/emergency_switch.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+      <material name="yellow" />
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vs_rover_options_description/meshes/mimi/emergency_switch.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+
+  <material name="yellow">
+    <color rgba="1 1 0 1.0"/>
+  </material>
+
+</robot>

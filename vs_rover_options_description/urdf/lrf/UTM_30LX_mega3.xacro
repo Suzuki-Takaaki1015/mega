@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot name="lidar_utm30lx" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:property name="lidar_x_offset" value="0.0" /> <!--台車正面から見て右左（赤軸） -->
+  <xacro:property name="lidar_y_offset" value="0.21" /> <!--台車正面から見て前後（青軸）-->
+  <xacro:property name="lidar_z_offset" value="0.11" /> <!--台車正面から見て上下（緑軸）-->
+  <xacro:property name="lidar_mass" value="0.250" />
+  <xacro:property name="lidar_com_x" value="0.0" />
+  <xacro:property name="lidar_com_y" value="0.0" />
+  <xacro:property name="lidar_com_z" value="0.0" />
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="UTM_30LX" />
+    <origin xyz="${lidar_x_offset} ${lidar_y_offset} ${lidar_z_offset}" rpy="-1.5708 0 0" />
+  </joint>
+
+  <link name="UTM_30LX">
+    <inertial>
+      <origin xyz="${lidar_com_x} ${lidar_com_y} ${lidar_com_z}" rpy="0 0 0" />
+      <mass value="${lidar_mass}" />
+      <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" iyz="0" ixz="0" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vs_rover_options_description/meshes/lrf/UTM_30LX.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://vs_rover_options_description/meshes/lrf/UTM_30LX.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+</robot>
